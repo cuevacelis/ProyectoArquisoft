@@ -528,13 +528,13 @@ GO
 SET IDENTITY_INSERT [dbo].[Usuario] ON 
 
 GO
-INSERT [dbo].[Usuario] ([idUsuario], [idCliente], [nomUsuario], [correo], [contrasenia], [estUsuario], [fecCreacion], [tipo]) VALUES (1, 1, N'jose', N'cuevacelis@hotmail.com', N'12345', 1, CAST(0x0000AA6700000000 AS DateTime), 1)
+INSERT [dbo].[Usuario] ([idUsuario], [idCliente], [nomUsuario], [correo], [contrasenia], [estUsuario], [fecCreacion], [tipo]) VALUES (1, 1, N'Jose', N'cuevacelis@hotmail.com', N'12345', 1, CAST(0x0000AA6700000000 AS DateTime), 1)
 GO
-INSERT [dbo].[Usuario] ([idUsuario], [idCliente], [nomUsuario], [correo], [contrasenia], [estUsuario], [fecCreacion], [tipo]) VALUES (2, 2, N'adrian', N'adrian@gmail.com', N'12345', 1, CAST(0x0000AA6700000000 AS DateTime), 1)
+INSERT [dbo].[Usuario] ([idUsuario], [idCliente], [nomUsuario], [correo], [contrasenia], [estUsuario], [fecCreacion], [tipo]) VALUES (2, 2, N'Adrian', N'adrian@gmail.com', N'12345', 1, CAST(0x0000AA6700000000 AS DateTime), 1)
 GO
-INSERT [dbo].[Usuario] ([idUsuario], [idCliente], [nomUsuario], [correo], [contrasenia], [estUsuario], [fecCreacion], [tipo]) VALUES (3, 3, N'gonzalo', N'gonzalo@hotmail.com', N'12345', 1, CAST(0x0000AA6700000000 AS DateTime), 0)
+INSERT [dbo].[Usuario] ([idUsuario], [idCliente], [nomUsuario], [correo], [contrasenia], [estUsuario], [fecCreacion], [tipo]) VALUES (3, 3, N'Gonzalo', N'gonzalo@hotmail.com', N'12345', 1, CAST(0x0000AA6700000000 AS DateTime), 0)
 GO
-INSERT [dbo].[Usuario] ([idUsuario], [idCliente], [nomUsuario], [correo], [contrasenia], [estUsuario], [fecCreacion], [tipo]) VALUES (4, 4, N'dylan', N'dylan@hotmail.com', N'12345', 1, CAST(0x0000AA6700000000 AS DateTime), 0)
+INSERT [dbo].[Usuario] ([idUsuario], [idCliente], [nomUsuario], [correo], [contrasenia], [estUsuario], [fecCreacion], [tipo]) VALUES (4, 4, N'Dylan', N'dylan@hotmail.com', N'12345', 1, CAST(0x0000AA6700000000 AS DateTime), 0)
 GO
 INSERT [dbo].[Usuario] ([idUsuario], [idCliente], [nomUsuario], [correo], [contrasenia], [estUsuario], [fecCreacion], [tipo]) VALUES (5, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
 GO
