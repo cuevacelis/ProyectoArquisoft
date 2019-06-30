@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CapaEntidad.entHabitacion>
+
+@{
+    ViewBag.Title = "Gestionar Habitaciones del Hotel";
+    ViewBag.image = "/Contents/images/security.png";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Habitaciones del Hotel</h2>
+
+<p>
+    @Html.ActionLink("Agregar Nueva Habitacion", "Create")
+</p>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id Habitacion</th>
+            <th scope="col"> Numero De Habitacion</th>
+            <th scope="col"> Descripcion</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Id Tipo Habitacion </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idHabitacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numeroHabitacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descHabitacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estHabitacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idTipoHabitacion.idTipoHabitacion)
+                </td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<a href="@Url.Action("Index","MenuIntranet")">
+    <h4>Volver al Panel de Gestion</h4>
+</a>

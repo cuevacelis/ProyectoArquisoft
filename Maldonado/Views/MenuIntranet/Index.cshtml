@@ -1,0 +1,132 @@
+﻿@using CapaEntidad
+
+
+
+<div class="row">
+    <div class="col-lg-12 ">
+        <div class="alert alert-info">
+            <strong>Hotel "La Posada del Rey" le da la Bienvenida al panel de Gestion </strong> !No divulge ni comparta su clave de seguridad con nadie!
+        </div>
+
+    </div>
+</div>
+
+@{
+    /**/
+
+    entUsuario us = (entUsuario)Session["usuario"];
+
+    if (us.tipo==true)
+    {
+        ViewBag.Title = "Bienvenid@ Gerente " + us.nomUsuario;
+        <div class="row text-center pad-top">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square">
+                    <a href="@Url.Action("ListarReservas","MantenedorReserva")">
+                        <i class="fas fa-concierge-bell " style="font-size: 50px; color : black;"></i>
+                        <h4 >Gestionar Reservas</h4>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square">
+                    <a href="@Url.Action("ListarHabitacion","MantenedorHabitacion")">
+                        <i class="fas fa-hotel" style="font-size: 50px; color : black;"></i>
+                        <h4>Gestionar Habitaciones</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square">
+                    <a href="@Url.Action("ListarCliente","MantenedorCliente")">
+                        <i class="fas fa-users" style="font-size: 50px; color : black;"></i>
+                        <h4>Gestionar Clientes</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square">
+                    <a href="blank.html">
+                        <i class="fa fa-key" style="font-size: 50px; color : black;"></i>
+                        <h4>Admin </h4>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square">
+                    <a href="blank.html">
+                        <i class="fa fa-comments-o" style="font-size: 50px; color : black;"></i>
+                        <h4>Soporte</h4>
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square ">
+                    <a href="blank.html">
+                        <i class="fa fa-bell-o" style="font-size: 50px; color : black;"></i>
+                        <h4 >Notificaciones </h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        
+        ViewBag.Title = "Bienvenid@ "+ "Usuario " + us.nomUsuario;
+        <div class="row text-center pad-top">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square">
+                    <a href="@Url.Action("ListarReservas_Por_Usuario","MantenedorReserva")">
+                        <i class="fas fa-concierge-bell" style="font-size: 50px; color : black;"></i>
+                        <h4>Ver mis Reservas</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square">
+                    <a href="@Url.Action("Reservaciones","Inicio")">
+                        <i class="fas fa-calendar-plus" style="font-size: 50px; color : black;"></i>
+                        <h4>Agregar Reservas</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square ">
+                    <a href="blank.html">
+                        <i class="fa fa-comments-o" style="font-size: 50px; color : black;"></i>
+                        <h4 >Soporte</h4>
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square">
+                    <a href="blank.html">
+                        <i class="fa fa-bell-o" style="font-size: 50px; color : black;"></i>
+                        <h4>Notificaciones </h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    }
+    
+    ViewBag.image = "/Contents/images/security.png";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--<div>
+    <p>Bienvenido: @ViewBag.usuario</p>
+    <br />
+    Bienvendio:
+    @{
+        entUsuario u = (entUsuario)Session["usuario"];
+    }
+    <br />
+
+</div>-->
