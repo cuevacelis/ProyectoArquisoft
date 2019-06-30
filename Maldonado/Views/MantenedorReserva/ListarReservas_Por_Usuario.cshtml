@@ -16,7 +16,6 @@
 <table class="table">
     <thead class="thead-dark">
         <tr>
-            <th scope="col">Id Reserva</th>
             <th scope="col">Nombre</th>
             <th scope="col">Apellido</th>
             <th scope="col">N° de Habitacion</th>
@@ -24,8 +23,6 @@
             <th scope="col">Descripcion Tipo Habitacion</th>
             <th scope="col">Fecha de Inicio</th>
             <th scope="col">Fecha de Fin</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Opciones</th>
         </tr>
     </thead>
 
@@ -33,9 +30,6 @@
         @foreach (var item in Model)
         {
             <tr>
-                <th scope="row">
-                    @Html.DisplayFor(modelItem => item.idReserva)
-                </th>
                 <td>
                     @Html.DisplayFor(modelItem => item.idCliente.nombreCliente)
                 </td>
@@ -56,12 +50,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.fechaFinReserva)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EstReserva)
-                </td>
-                <td>
-                    @Html.ActionLink("Eliminar", "EliminarReserva", new { idReserva = @item.idReserva })
                 </td>
             </tr>
         }

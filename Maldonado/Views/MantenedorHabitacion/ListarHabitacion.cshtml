@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Lista de Habitaciones del Hotel</h2>
+<h2 class="display-4 ">Lista de Habitaciones del Hotel</h2>
 
 <p>
     @Html.ActionLink("Agregar Nueva Habitacion", "Create")
@@ -19,6 +19,7 @@
             <th scope="col"> Descripcion</th>
             <th scope="col">Estado</th>
             <th scope="col">Id Tipo Habitacion </th>
+            <th scope="col">Desc. Tipo Habitacion </th>
             <th></th>
         </tr>
     </thead>
@@ -40,6 +41,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.idTipoHabitacion.idTipoHabitacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idTipoHabitacion.desTipoHabitacion)
                 </td>
                 <td></td>
             </tr>
