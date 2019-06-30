@@ -39,7 +39,6 @@ namespace CapaAccesoDatos
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-
                     entHabitacion Habitacion = new entHabitacion();
 
                     Habitacion.idHabitacion = Convert.ToInt16(dr["IdHabitacion"]);

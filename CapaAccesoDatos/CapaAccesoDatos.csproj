@@ -45,6 +45,7 @@
     <Compile Include="datHabitacion.cs" />
     <Compile Include="datReserva.cs" />
     <Compile Include="datTipoCliente.cs" />
+    <Compile Include="datTipohabitacion.cs" />
     <Compile Include="datUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
