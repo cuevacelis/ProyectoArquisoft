@@ -133,6 +133,70 @@ namespace Maldonado.Controllers
                 return RedirectToAction("InsertarReserva", new { mesjExceptio = ex.Message });
             }
         }
+
+        [HttpGet]
+        public ActionResult InsertarReservaUsuario()
+        {
+            try
+            {
+                entUsuario u = (entUsuario)Session["usuario"];
+                //ViewBag.usuario = u.idCliente.nombreCliente + " " + u.nomUsuario;
+                if (u!=null)
+                {
+                    List<entHabitacion> listarHabitacion = logHabitacion.Instancia.ListarHabitacion();
+                    var lsHabitacion = new SelectList(listarHabitacion, "idHabitacion", "numeroHabitacion");
+                    
+                    ViewBag.listaHabitacion = lsHabitacion;
+                    return View();
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult InsertarReservaUsuario(entReserva R, FormCollection frm)
+        {
+            try
+            {
+                entUsuario u = (entUsuario)Session["usuario"];
+                if (u != null)
+                {
+                    R.idCliente = new entCliente();
+                    R.idHabitacion = new entHabitacion();
+
+                    R.idCliente.idCliente = u.idCliente.idCliente;
+                    R.idHabitacion.idHabitacion = Convert.ToInt32(frm["cboHabitacion"]);
+
+                    Boolean inserta = logReserva.Instancia.InsertarReserva(R);
+
+                    if (inserta)
+                    {
+                        return RedirectToAction("ListarReservas_Por_Usuario");
+                    }
+                    else
+                    {
+                        return View(R);
+                    }
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+
+            }
+            catch (ApplicationException ex)
+            {
+                return RedirectToAction("InsertarReserva", new { mesjExceptio = ex.Message });
+            }
+        }
+
         public ActionResult EliminarReserva(int idReserva)
         {
             try
