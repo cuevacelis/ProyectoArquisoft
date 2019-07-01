@@ -11,6 +11,8 @@ namespace Maldonado
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/bundles/css").Include(
+                "~/Contents/css/style.css",//propio Estilo de Hotel la Posada del REy
+
                 "~/Contents/css/bootstrap.min.css",
                 "~/Contents/css/animate.css",
                 "~/Contents/css/owl.carousel.min.css",
@@ -18,8 +20,9 @@ namespace Maldonado
                 "~/Contents/css/bootstrap-datepicker.css",
                 "~/Contents/css/jquery.timepicker.css",
                 "~/Contents/css/fancybox.min.css",
-                "~/Contents/fonts/ionicons/css/ionicons.min.css",
-                "~/Contents/fonts/fontawesome/css/font-awesome.min.css"
+                "~/Contents/FontAwesomeIcon/css/all.css"
+
+                
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
@@ -34,6 +37,10 @@ namespace Maldonado
                 "~/Contents/js/bootstrap-datepicker.js",
                 "~/Contents/js/jquery.timepicker.min.js",
                 "~/Contents/js/main.js"
+                ));
+            bundles.Add(new ScriptBundle("~/bundles/MyJson").Include(
+                "~/Contents/js/jquery-3.3.1.min.js",
+               "~/Contents/MisScript/JS_HabitacionyTipoHabitacion_Json.js"
                 ));
         }
     }

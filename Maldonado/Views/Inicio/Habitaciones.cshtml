@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "Habitaciones";
     ViewBag.image = "/Contents/images/Habitaciones.jpg";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
@@ -75,7 +76,7 @@
 
         <div class="row">
             <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
-                <a href="@Url.Action("Reservaciones","Inicio")" class="room">
+                <a href="@Url.Action("InsertarReservaUsuario","MantenedorReserva")" class="room">
                     <figure class="img-wrap">
                         <img src="~/Contents/images/habitacion_simple.jpg" alt="Free website template" class="img-fluid mb-3">
                     </figure>
@@ -87,7 +88,7 @@
             </div>
 
             <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
-                <a href="@Url.Action("Reservaciones","Inicio")" class="room">
+                <a href="@Url.Action("InsertarReservaUsuario","MantenedorReserva")" class="room">
                     <figure class="img-wrap">
                         <img src="/Contents/images/habitacion_doble.jpg" alt="Free website template" class="img-fluid mb-3">
                     </figure>
@@ -99,7 +100,7 @@
             </div>
 
             <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
-                <a href="@Url.Action("Reservaciones","Inicio")" class="room">
+                <a href="@Url.Action("InsertarReservaUsuario","MantenedorReserva")" class="room">
                     <figure class="img-wrap">
                         <img src="~/Contents/images/habitacion_triple.jpg" alt="Free website template" class="img-fluid mb-3">
                     </figure>
@@ -111,7 +112,7 @@
             </div>
 
             <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
-                <a href="@Url.Action("Reservaciones","Inicio")" class="room">
+                <a href="@Url.Action("InsertarReservaUsuario","MantenedorReserva")" class="room">
                     <figure class="img-wrap">
                         <img src="~/Contents/images/habitacion_matrimonial.jpg" alt="Free website template" class="img-fluid mb-3">
                     </figure>
@@ -123,7 +124,7 @@
             </div>
 
             <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
-                <a href="@Url.Action("Reservaciones","Inicio")" class="room">
+                <a href="@Url.Action("InsertarReservaUsuario","MantenedorReserva")" class="room">
                     <figure class="img-wrap">
                         <img src="~/Contents/images/img_3.jpg" alt="Free website template" class="img-fluid mb-3">
                     </figure>
@@ -148,21 +149,21 @@
         </div>
 
         <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="100">
-            <a href="@Url.Action("Reservaciones","Inicio")" class="image d-block bg-image-2" style="background-image: url('/Contents/images/habitacion_matrimonial.jpg');"></a>
+            <a href="@Url.Action("InsertarReservaUsuario","MantenedorReserva")" class="image d-block bg-image-2" style="background-image: url('/Contents/images/habitacion_matrimonial.jpg');"></a>
             <div class="text">
                 <span class="d-block mb-4"><span class="display-4 text-primary">S/ 160</span> <span class="text-uppercase letter-spacing-2">/ por noche</span> </span>
                 <h2 class="mb-4">Habitacion Matrimonial</h2>
                 <p>Tranquila y confortable. Además de una cuidada decoración cuenta con todos los servicios necesarios para tener una estancia inolvidable.</p>
-                <p><a href="@Url.Action("Reservaciones","Inicio")" class="btn btn-primary text-white">Reservar Ahora</a></p>
+                <p><a href="@Url.Action("InsertarReservaUsuario","MantenedorReserva")" class="btn btn-primary text-white">Reservar Ahora</a></p>
             </div>
         </div>
         <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="200">
-            <a href="@Url.Action("Reservaciones","Inicio")" class="image d-block bg-image-2 order-2" style="background-image: url('/Contents/images/img_3.jpg');"></a>
+            <a href="@Url.Action("InsertarReservaUsuario","MantenedorReserva")" class="image d-block bg-image-2 order-2" style="background-image: url('/Contents/images/img_3.jpg');"></a>
             <div class="text order-1">
                 <span class="d-block mb-4"><span class="display-4 text-primary">S/ 140</span> <span class="text-uppercase letter-spacing-2">/ por noche</span> </span>
                 <h2 class="mb-4">Suite Junior</h2>
                 <p>Es la suite idónea para altos ejecutivos que desean comodidad y espacios separados para descansar y trabajar. Además de una cuidada decoración donde Ud. tendrá un servicio de calidad.</p>
-                <p><a href="@Url.Action("Reservaciones","Inicio")" class="btn btn-primary text-white">Reservar Ahora</a></p>
+                <p><a href="@Url.Action("InsertarReservaUsuario","MantenedorReserva")" class="btn btn-primary text-white">Reservar Ahora</a></p>
             </div>
         </div>
 

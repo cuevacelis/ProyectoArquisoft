@@ -70,7 +70,7 @@
     @Html.ActionLink("Volver a Gestionar Reservas", "Index")
 </div>
 
-@Scripts.Render("~/bundles/js")
+@Scripts.Render("~/bundles/MyJson")
 <script type="text/javascript">
     $(document).ready(function () {
         $('#TipoHabitacion').change(function () {
@@ -88,9 +88,9 @@
             success: function (listarHabitacion) {
                 $.each(listarHabitacion, function (i,dato){
                     $('#Habitacion').append('<option value ="' + dato.idHabitacion + '">' + dato.numeroHabitacion + '</option>');
-                })                
+                })
             }
         });
     }
-    
+
 </script>

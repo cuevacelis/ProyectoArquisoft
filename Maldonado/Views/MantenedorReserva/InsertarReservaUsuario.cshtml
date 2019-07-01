@@ -22,7 +22,6 @@
 <section class="section contact-section" id="next">
     <div class="container">
         <div class="row">
-
             <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
 
                 <form action="#" method="post" class="bg-white p-md-5 p-4 mb-5 border">
@@ -51,16 +50,16 @@
                         <div class="col-md-12 form-group">
                             <label class="text-black font-weight-bold" for="email">¿Que Tipo De Habitacion?</label>
                             <div>
-                                @Html.DropDownList("cboTipoHabitacion", (SelectList)ViewBag.listaTipoHabitacion, "<seleccionar>", new { @class = "custom-select", @id = "TipoHabitacion", required = true, @name = "lista1" })
+                                @Html.DropDownList("cboTipoHabitacion", (SelectList)ViewBag.listaTipoHabitacion, "<Haga Click y Seleccione>", new { @class = "custom-select", @id = "TipoHabitacion", required = true, @name = "lista1" })
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <label class="text-black font-weight-bold" for="email">¿Que habitacion Deseas?</label>
+                            <label class="text-black font-weight-bold" for="email">¿Que Numero de Habitacion?</label>
                             <div>
-                                @Html.DropDownList("cboHabitacion", (SelectList)ViewBag.listaHabitacion, "<seleccionar>", new { @class = "custom-select", @id = "Habitacion", required = true })
+                                @Html.DropDownList("cboHabitacion", (SelectList)ViewBag.listaHabitacion, "<Haga Click y Seleccione>", new { @class = "custom-select", @id = "Habitacion", required = true })
                             </div>
                         </div>
                     </div>
@@ -176,7 +175,7 @@
 </section>
 
 
-@Scripts.Render("~/bundles/js")
+@Scripts.Render("~/bundles/MyJson")
 <script type="text/javascript">
     $(document).ready(function () {
         $('#TipoHabitacion').change(function () {
@@ -192,7 +191,7 @@
             dataType: 'json',
             data: { idHabitacion: $('#TipoHabitacion').val() },
             success: function (listarHabitacion) {
-                $.each(listarHabitacion, function (i,dato){
+                $.each(listarHabitacion, function (i, dato) {
                     $('#Habitacion').append('<option value ="' + dato.idHabitacion + '">' + dato.numeroHabitacion + '</option>');
                 })
             }
