@@ -74,7 +74,7 @@ namespace Maldonado.Controllers
             //    entUsuario u = (entUsuario)Session["usuario"];
             //    //ViewBag.usuario = u.idCliente.nombreCliente + " " + u.nomUsuario;
             //    if (u.tipo == true)
-                //{
+            //{
                     List<entCliente> listarCliente = logCliente.Instancia.ListarCliente();
                     var lsCliente = new SelectList(listarCliente, "idCliente", "nombreCliente");
 
@@ -116,7 +116,7 @@ namespace Maldonado.Controllers
 
                     R.idCliente.idCliente = Convert.ToInt32(frm["cboCliente"]);
                     R.idHabitacion.idTipoHabitacion.idTipoHabitacion=Convert.ToInt32(frm["cboTipoHabitacion"]);
-                    R.idHabitacion.idHabitacion = Convert.ToInt32(frm["cboHabitacion"]);
+                    
 
                     Boolean inserta = logReserva.Instancia.InsertarReserva(R);
 
@@ -139,6 +139,16 @@ namespace Maldonado.Controllers
             //{
             //    return RedirectToAction("InsertarReserva", new { mesjExceptio = ex.Message });
             //}
+        }
+
+        [HttpPost]
+        public JsonResult TraerDatosTipoHabitacion(int idHabitacion)
+        {
+            List<entHabitacion> listarHabitacion = logHabitacion.Instancia.ListarHabitacionPorTipo(idHabitacion);
+            var lsHabitacion = new SelectList(listarHabitacion, "idHabitacion", "numeroHabitacion");
+            //R.idHabitacion.idHabitacion = Convert.ToInt32(frm["cboHabitacion"]);
+
+            return Json(listarHabitacion, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

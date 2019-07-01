@@ -11,11 +11,11 @@
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-    
+
 }
 
 
-<div class="col-md-7" data-aos="fade-up" data-aos-delay="100"  id="next">
+<div class="col-md-7" data-aos="fade-up" data-aos-delay="100" id="next">
 
     <form action="#" method="post" class="bg-white p-md-5 p-4 mb-5 border">
         <fieldset>
@@ -47,14 +47,14 @@
             <div class="form-group">
                 Tipo de Habitacion:
                 <div>
-                    @Html.DropDownList("cboTipoHabitacion", (SelectList)ViewBag.listaTipoHabitacion, "<seleccionar>", new { @class = "custom-select", @id = "inputState", required = true })
+                    @Html.DropDownList("cboTipoHabitacion", (SelectList)ViewBag.listaTipoHabitacion, "<seleccionar>", new { @class = "custom-select", @id = "TipoHabitacion", required = true, @name = "lista1" })
                 </div>
             </div>
 
             <div class="form-group">
                 N° de Habitacion:
                 <div>
-                    @Html.DropDownList("cboHabitacion", (SelectList)ViewBag.listaHabitacion, "<seleccionar>", new { @class = "custom-select", @id = "inputState", required = true })
+                    @Html.DropDownList("cboHabitacion", (SelectList)ViewBag.listaHabitacion, "<seleccionar>", new { @class = "custom-select", @id = "Habitacion", required = true })
                 </div>
             </div>
 
@@ -69,3 +69,28 @@
 <div>
     @Html.ActionLink("Volver a Gestionar Reservas", "Index")
 </div>
+
+@Scripts.Render("~/bundles/js")
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#TipoHabitacion').change(function () {
+            $('#Habitacion').empty();
+            seleccionarElemento();
+        });
+    });
+
+    function seleccionarElemento() {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("TraerDatosTipoHabitacion")',
+            dataType: 'json',
+            data: { idHabitacion: $('#TipoHabitacion').val() },
+            success: function (listarHabitacion) {
+                $.each(listarHabitacion, function (i,dato){
+                    $('#Habitacion').append('<option value =' + dato.idHabitacion + '">' + dato.numeroHabitacion+'</option>');
+                })                
+            }
+        });
+    }
+    
+</script>
