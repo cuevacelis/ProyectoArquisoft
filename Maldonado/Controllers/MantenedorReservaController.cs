@@ -81,7 +81,7 @@ namespace Maldonado.Controllers
                     List<entTipoHabitacion> listarTipoHabitacion = logTipoHabitacion.Instancia.ListarTipoHabitacion();
                     var lsTipoHabitacion = new SelectList(listarTipoHabitacion, "idTipoHabitacion", "DesTipoHabitacion");
 
-                    List<entHabitacion> listarHabitacion = logHabitacion.Instancia.ListarHabitacionPorTipo(1);
+                    List<entHabitacion> listarHabitacion = logHabitacion.Instancia.ListarHabitacion();
                     var lsHabitacion = new SelectList(listarHabitacion, "idHabitacion", "numeroHabitacion");
 
                     ViewBag.ListaCliente = lsCliente;
@@ -157,13 +157,17 @@ namespace Maldonado.Controllers
             try
             {
                 entUsuario u = (entUsuario)Session["usuario"];
-                //ViewBag.usuario = u.idCliente.nombreCliente + " " + u.nomUsuario;
                 if (u!=null)
                 {
+                    List<entTipoHabitacion> listarTipoHabitacion = logTipoHabitacion.Instancia.ListarTipoHabitacion();
+                    var lsTipoHabitacion = new SelectList(listarTipoHabitacion, "idTipoHabitacion", "DesTipoHabitacion");
+
                     List<entHabitacion> listarHabitacion = logHabitacion.Instancia.ListarHabitacion();
                     var lsHabitacion = new SelectList(listarHabitacion, "idHabitacion", "numeroHabitacion");
                     
+                    ViewBag.ListaTipoHabitacion = lsTipoHabitacion;
                     ViewBag.listaHabitacion = lsHabitacion;
+
                     return View();
                 }
                 else
@@ -187,8 +191,10 @@ namespace Maldonado.Controllers
                 {
                     R.idCliente = new entCliente();
                     R.idHabitacion = new entHabitacion();
+                    R.idHabitacion.idTipoHabitacion = new entTipoHabitacion();
 
                     R.idCliente.idCliente = u.idCliente.idCliente;
+                    R.idHabitacion.idTipoHabitacion.idTipoHabitacion = Convert.ToInt32(frm["cboTipoHabitacion"]);
                     R.idHabitacion.idHabitacion = Convert.ToInt32(frm["cboHabitacion"]);
 
                     Boolean inserta = logReserva.Instancia.InsertarReserva(R);

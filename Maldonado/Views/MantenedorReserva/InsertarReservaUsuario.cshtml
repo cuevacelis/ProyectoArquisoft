@@ -49,9 +49,18 @@
 
                     <div class="row">
                         <div class="col-md-12 form-group">
+                            <label class="text-black font-weight-bold" for="email">¿Que Tipo De Habitacion?</label>
+                            <div>
+                                @Html.DropDownList("cboTipoHabitacion", (SelectList)ViewBag.listaTipoHabitacion, "<seleccionar>", new { @class = "custom-select", @id = "TipoHabitacion", required = true, @name = "lista1" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 form-group">
                             <label class="text-black font-weight-bold" for="email">¿Que habitacion Deseas?</label>
                             <div>
-                                @Html.DropDownList("cboHabitacion", (SelectList)ViewBag.listaHabitacion, "<seleccionar>", new { @class = "custom-select", @id = "inputState", required = true })
+                                @Html.DropDownList("cboHabitacion", (SelectList)ViewBag.listaHabitacion, "<seleccionar>", new { @class = "custom-select", @id = "Habitacion", required = true })
                             </div>
                         </div>
                     </div>
@@ -165,3 +174,29 @@
 
     </div>
 </section>
+
+
+@Scripts.Render("~/bundles/js")
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#TipoHabitacion').change(function () {
+            $('#Habitacion').empty();
+            seleccionarElemento();
+        });
+    });
+
+    function seleccionarElemento() {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("TraerDatosTipoHabitacion")',
+            dataType: 'json',
+            data: { idHabitacion: $('#TipoHabitacion').val() },
+            success: function (listarHabitacion) {
+                $.each(listarHabitacion, function (i,dato){
+                    $('#Habitacion').append('<option value ="' + dato.idHabitacion + '">' + dato.numeroHabitacion + '</option>');
+                })
+            }
+        });
+    }
+
+</script>
