@@ -69,54 +69,53 @@ namespace Maldonado.Controllers
         [HttpGet]
         public ActionResult InsertarReserva()
         {
-            //try
-            //{
-            //    entUsuario u = (entUsuario)Session["usuario"];
-            //    //ViewBag.usuario = u.idCliente.nombreCliente + " " + u.nomUsuario;
-            //    if (u.tipo == true)
-            //{
+            try
+            {
+                entUsuario u = (entUsuario)Session["usuario"];
+                //ViewBag.usuario = u.idCliente.nombreCliente + " " + u.nomUsuario;
+                if (u.tipo == true)
+                {
                     List<entCliente> listarCliente = logCliente.Instancia.ListarCliente();
                     var lsCliente = new SelectList(listarCliente, "idCliente", "nombreCliente");
 
                     List<entTipoHabitacion> listarTipoHabitacion = logTipoHabitacion.Instancia.ListarTipoHabitacion();
                     var lsTipoHabitacion = new SelectList(listarTipoHabitacion, "idTipoHabitacion", "DesTipoHabitacion");
 
-                    List<entHabitacion> listarHabitacion = logHabitacion.Instancia.ListarHabitacion();
+                    List<entHabitacion> listarHabitacion = logHabitacion.Instancia.ListarHabitacionPorTipo(1);
                     var lsHabitacion = new SelectList(listarHabitacion, "idHabitacion", "numeroHabitacion");
 
                     ViewBag.ListaCliente = lsCliente;
                     ViewBag.ListaTipoHabitacion = lsTipoHabitacion;
                     ViewBag.listaHabitacion = lsHabitacion;
                     return View();
-            //    }
-            //    else
-            //    {
-            //        return RedirectToAction("Index", "Login");
-            //    }
-            //}
-            //catch (Exception e)
-            //{
-            //    return RedirectToAction("Index", "Login");
-            //}
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index", "Login");
+            }
         }
 
         [HttpPost]
         public ActionResult InsertarReserva(entReserva R, FormCollection frm)
         {
-            //try
-            //{
-            //    entUsuario u = (entUsuario)Session["usuario"];
-            //    //ViewBag.usuario = u.idCliente.nombreCliente + " " + u.nomUsuario;
-            //    if (u.tipo == true)
-            //    {
-                    entTipoHabitacion th;
+            try
+            {
+                entUsuario u = (entUsuario)Session["usuario"];
+                //ViewBag.usuario = u.idCliente.nombreCliente + " " + u.nomUsuario;
+                if (u.tipo == true)
+                {
                     R.idCliente = new entCliente();
                     R.idHabitacion = new entHabitacion();
                     R.idHabitacion.idTipoHabitacion = new entTipoHabitacion();
 
                     R.idCliente.idCliente = Convert.ToInt32(frm["cboCliente"]);
-                    R.idHabitacion.idTipoHabitacion.idTipoHabitacion=Convert.ToInt32(frm["cboTipoHabitacion"]);
-                    
+                    R.idHabitacion.idTipoHabitacion.idTipoHabitacion = Convert.ToInt32(frm["cboTipoHabitacion"]);
+                    R.idHabitacion.idHabitacion = Convert.ToInt32(frm["cboHabitacion"]);
 
                     Boolean inserta = logReserva.Instancia.InsertarReserva(R);
 
@@ -128,25 +127,26 @@ namespace Maldonado.Controllers
                     {
                         return View(R);
                     }
-            //    }
-            //    else
-            //    {
-            //        return RedirectToAction("Index", "Login");
-            //    }
-                
-            //}
-            //catch (ApplicationException ex)
-            //{
-            //    return RedirectToAction("InsertarReserva", new { mesjExceptio = ex.Message });
-            //}
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+
+            }
+            catch (ApplicationException ex)
+            {
+                return RedirectToAction("InsertarReserva", new { mesjExceptio = ex.Message });
+            }
         }
 
+        //JSON
         [HttpPost]
         public JsonResult TraerDatosTipoHabitacion(int idHabitacion)
         {
             List<entHabitacion> listarHabitacion = logHabitacion.Instancia.ListarHabitacionPorTipo(idHabitacion);
             var lsHabitacion = new SelectList(listarHabitacion, "idHabitacion", "numeroHabitacion");
-            //R.idHabitacion.idHabitacion = Convert.ToInt32(frm["cboHabitacion"]);
+            ViewBag.listaHabitacion = lsHabitacion;
 
             return Json(listarHabitacion, JsonRequestBehavior.AllowGet);
         }

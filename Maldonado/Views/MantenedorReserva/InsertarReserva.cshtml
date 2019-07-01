@@ -87,7 +87,7 @@
             data: { idHabitacion: $('#TipoHabitacion').val() },
             success: function (listarHabitacion) {
                 $.each(listarHabitacion, function (i,dato){
-                    $('#Habitacion').append('<option value =' + dato.idHabitacion + '">' + dato.numeroHabitacion+'</option>');
+                    $('#Habitacion').append('<option value ="' + dato.idHabitacion + '">' + dato.numeroHabitacion + '</option>');
                 })                
             }
         });
