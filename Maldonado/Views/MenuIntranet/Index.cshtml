@@ -1,7 +1,5 @@
 ﻿@using CapaEntidad
 
-
-
 <div class="row">
     <div class="col-lg-12 ">
         <div class="alert alert-info">
@@ -12,11 +10,15 @@
 </div>
 
 @{
+
+    ViewBag.image = "/Contents/images/security.png";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
     /**/
 
     entUsuario us = (entUsuario)Session["usuario"];
 
-    if (us.tipo==true)
+    if (us.tipo == true)
     {
         ViewBag.Title = "Bienvenid@ Gerente " + us.nomUsuario;
         <div class="row text-center pad-top">
@@ -24,7 +26,7 @@
                 <div class="div-square">
                     <a href="@Url.Action("ListarReservas","MantenedorReserva")">
                         <i class="fas fa-concierge-bell " style="font-size: 50px; color : black;"></i>
-                        <h4 >Gestionar Reservas</h4>
+                        <h4>Gestionar Reservas</h4>
                     </a>
                 </div>
             </div>
@@ -47,27 +49,25 @@
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="blank.html">
+                    <a href="@Url.Action("Error","Error")">
                         <i class="fa fa-key" style="font-size: 50px; color : black;"></i>
                         <h4>Admin </h4>
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <i class="fa fa-comments-o" style="font-size: 50px; color : black;"></i>
-                        <h4>Soporte</h4>
+                <div class="div-square ">
+                    <a href="@Url.Action("Error","Error")">
+                        <i class="fas fa-bell" style="font-size: 50px; color : black;"></i>
+                        <h4>Notificaciones </h4>
                     </a>
                 </div>
-
-
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square ">
-                    <a href="blank.html">
-                        <i class="fa fa-bell-o" style="font-size: 50px; color : black;"></i>
-                        <h4 >Notificaciones </h4>
+                <div class="div-square">
+                    <a href="@Url.Action("Error","Error")">
+                        <i class="fas fa-question-circle" style="font-size: 50px; color : black;"></i>
+                        <h4>Soporte</h4>
                     </a>
                 </div>
             </div>
@@ -75,8 +75,8 @@
     }
     else
     {
-        
-        ViewBag.Title = "Bienvenid@ "+ "Usuario " + us.nomUsuario;
+
+        ViewBag.Title = "Bienvenid@ " + "Usuario " + us.nomUsuario;
         <div class="row text-center pad-top">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
@@ -89,35 +89,35 @@
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
                     <a href="@Url.Action("InsertarReservaUsuario","MantenedorReserva")">
-                        <i class="fas fa-calendar-plus" style="font-size: 50px; color : black;"></i>
+                        <i class="fas fa-hotel" style="font-size: 50px; color : black;"></i>
                         <h4>Agregar Reservacion</h4>
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square ">
-                    <a href="blank.html">
-                        <i class="fa fa-comments-o" style="font-size: 50px; color : black;"></i>
-                        <h4 >Soporte</h4>
-                    </a>
-                </div>
-
-
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="blank.html">
-                        <i class="fa fa-bell-o" style="font-size: 50px; color : black;"></i>
+                    <a href="@Url.Action("Error","Error")">
+                        <i class="fas fa-bell" style="font-size: 50px; color : black;"></i>
                         <h4>Notificaciones </h4>
                     </a>
                 </div>
             </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square ">
+                    <a href="@Url.Action("Error","Error")">
+                        <i class="fas fa-question-circle" style="font-size: 50px; color : black;"></i>
+                        <h4>Soporte</h4>
+                    </a>
+                </div>
+            </div>
         </div>
-        
+
     }
-    
-    ViewBag.image = "/Contents/images/security.png";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+
+
+
 }
 
 <!--<div>

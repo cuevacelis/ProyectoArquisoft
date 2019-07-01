@@ -10,6 +10,7 @@ namespace Maldonado
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            //CSS
             bundles.Add(new StyleBundle("~/bundles/css").Include(
                 "~/Contents/css/style.css",//propio Estilo de Hotel la Posada del REy
 
@@ -21,12 +22,14 @@ namespace Maldonado
                 "~/Contents/css/jquery.timepicker.css",
                 "~/Contents/css/fancybox.min.css",
                 "~/Contents/FontAwesomeIcon/css/all.css"
-
-                
+                ));
+            bundles.Add(new StyleBundle("~/bundles/OdenarTablasCSS").Include(
+                "~/Contents/css/style.css"
                 ));
 
+            //JS
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                "~/Contents/js/jquery-3.3.1.min.js",
+                "~/Contents/js/jquery-3.4.1.min.js",
                 "~/Contents/js/jquery-migrate-3.0.1.min.js",
                 "~/Contents/js/popper.min.js",
                 "~/Contents/js/bootstrap.min.js",
@@ -39,8 +42,11 @@ namespace Maldonado
                 "~/Contents/js/main.js"
                 ));
             bundles.Add(new ScriptBundle("~/bundles/MyJson").Include(
-                "~/Contents/js/jquery-3.3.1.min.js",
-               "~/Contents/MisScript/JS_HabitacionyTipoHabitacion_Json.js"
+                "~/Contents/js/jquery-3.4.1.min.js"
+                ));
+            bundles.Add(new ScriptBundle("~/bundles/OrdenarTablas").Include(
+                "~/Contents/js/jquery-3.4.1.min.js",
+                "~/Contents/js/SortTable.js"
                 ));
         }
     }

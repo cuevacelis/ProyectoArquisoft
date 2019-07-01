@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<CapaEntidad.entReserva>
 
 @{
-    ViewBag.Title = "Reservas";
+    ViewBag.Title = "Ver mis Reservas";
     ViewBag.image = "/Contents/images/security.png";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -13,16 +13,16 @@
     </a>
 </p>
 
-<table class="table">
+<table class="table sortable">
     <thead class="thead-dark">
         <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">N° de Habitacion</th>
-            <th scope="col">Ubicacion</th>
-            <th scope="col">Descripcion Tipo Habitacion</th>
-            <th scope="col">Fecha de Inicio</th>
-            <th scope="col">Fecha de Fin</th>
+            <th scope="col" onclick="sortTable(0, 'str')">Nombre</th>
+            <th scope="col" onclick="sortTable(1, 'str')">Apellido</th>
+            <th scope="col" onclick="sortTable(2, 'int')">N° de Habitacion</th>
+            <th scope="col" onclick="sortTable(3, 'str')">Ubicacion</th>
+            <th scope="col" onclick="sortTable(4, 'str')">Descripcion Tipo Habitacion</th>
+            <th scope="col" onclick="sortTable(5, 'str')">Fecha de Inicio</th>
+            <th scope="col" onclick="sortTable(6, 'str')">Fecha de Fin</th>
         </tr>
     </thead>
 
@@ -62,3 +62,4 @@
     <h4>Volver al Panel de Gestion</h4>
 </a>
 
+@Scripts.Render("~/bundles/OrdenarTablas")

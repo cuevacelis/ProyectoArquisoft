@@ -201,6 +201,7 @@
     <Content Include="Contents\css\fancybox.min.css" />
     <Content Include="Contents\css\jquery.timepicker.css" />
     <Content Include="Contents\css\magnific-popup.css" />
+    <Content Include="Contents\css\OrdenarTablasCSS.css" />
     <Content Include="Contents\css\owl.carousel.min.css" />
     <Content Include="Contents\css\style.css" />
     <Content Include="Contents\css\_custom.css" />
@@ -231,12 +232,6 @@
     <Content Include="Contents\FontAwesomeIcon\js\v4-shims.js" />
     <Content Include="Contents\FontAwesomeIcon\js\v4-shims.min.js" />
     <Content Include="Contents\FontAwesomeIcon\LICENSE.txt" />
-    <Content Include="Contents\fonts\fontawesome\css\font-awesome.min.css" />
-    <Content Include="Contents\fonts\fontawesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="Contents\fonts\ionicons\cheatsheet.html" />
-    <Content Include="Contents\fonts\ionicons\css\ionicons.css" />
-    <Content Include="Contents\fonts\ionicons\css\ionicons.min.css" />
-    <Content Include="Contents\fonts\ionicons\fonts\ionicons.svg" />
     <Content Include="Contents\images\about_feature_image.png" />
     <Content Include="Contents\images\Background_Fondo.jpg" />
     <Content Include="Contents\images\food-1.jpg" />
@@ -268,7 +263,7 @@
     <Content Include="Contents\js\aos.js" />
     <Content Include="Contents\js\bootstrap-datepicker.js" />
     <Content Include="Contents\js\bootstrap.min.js" />
-    <Content Include="Contents\js\jquery-3.3.1.min.js" />
+    <Content Include="Contents\js\jquery-3.4.1.min.js" />
     <Content Include="Contents\js\jquery-migrate-3.0.1.min.js" />
     <Content Include="Contents\js\jquery.fancybox.min.js" />
     <Content Include="Contents\js\jquery.magnific-popup.min.js" />
@@ -279,6 +274,8 @@
     <Content Include="Contents\js\main.js" />
     <Content Include="Contents\js\owl.carousel.min.js" />
     <Content Include="Contents\js\popper.min.js" />
+    <Content Include="Contents\js\SortTable.js" />
+    <Content Include="Contents\js\tablesOrder.js" />
     <Content Include="Contents\LoginInteractivo\atardecer.jpg" />
     <Content Include="Contents\LoginInteractivo\css\reset.min.css" />
     <Content Include="Contents\LoginInteractivo\css\style.css" />
@@ -1933,6 +1930,7 @@
     <Content Include="Contents\bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="Contents\bootstrap\js\bootstrap.js.map" />
     <Content Include="Contents\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Contents\js\jquery-1.2.6.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1971,6 +1969,7 @@
     <Content Include="Views\MantenedorReserva\EliminarReserva.cshtml" />
     <Content Include="Views\MantenedorReserva\ListarReservas_Por_Usuario.cshtml" />
     <Content Include="Views\MantenedorReserva\InsertarReservaUsuario.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
     <None Include="Views\Shared\contact.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -2018,15 +2017,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Contents\css\bootstrap.css.map" />
-    <Content Include="Contents\fonts\.DS_Store" />
-    <Content Include="Contents\fonts\fontawesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Contents\fonts\fontawesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Contents\fonts\fontawesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Contents\fonts\fontawesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Contents\fonts\ionicons\.DS_Store" />
-    <Content Include="Contents\fonts\ionicons\fonts\ionicons.eot" />
-    <Content Include="Contents\fonts\ionicons\fonts\ionicons.ttf" />
-    <Content Include="Contents\fonts\ionicons\fonts\ionicons.woff" />
     <Content Include="Contents\images\.DS_Store" />
     <Content Include="Contents\js\.DS_Store" />
     <Content Include="Contents\scss\bootstrap-grid.scss" />

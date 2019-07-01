@@ -10,18 +10,18 @@
 <p>
     @Html.ActionLink("Agregar Nuevo Cliente", "InsertarCliente")
 </p>
-<table class="table">
+<table class="table sortable">
 
     <thead class="thead-dark">
         <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Dni</th>
-            <th scope="col">Telefono</th>
+            <th scope="col" onclick="sortTable(0, 'int')">Id</th>
+            <th scope="col" onclick="sortTable(1, 'str')">Nombre</th>
+            <th scope="col" onclick="sortTable(2, 'str')">Apellido</th>
+            <th scope="col" onclick="sortTable(3, 'int')">Dni</th>
+            <th scope="col" onclick="sortTable(4, 'int')">Telefono</th>
             <th scope="col">Estado</th>
-            <th scope="col">Tipo</th>
-            <th scope="col"></th>
+            <th scope="col" onclick="sortTable(5, 'str')">Tipo</th>
+            <th scope="col">Opciones</th>
         </tr>
     </thead>
 
@@ -52,7 +52,7 @@
                     @Html.DisplayFor(modelItem => item.idTipoCliente.desTipoCliente)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "EditarCliente", new { idCliente = @item.idCliente }) |
+                    @Html.ActionLink("Editar", "EditarCliente", new { idCliente = @item.idCliente }) |
                     <a href="/MantenedorCliente/EliminarCliente?idCliente=@item.idCliente " onclick="prueba()">Eliminar</a>
                     <script>
 
@@ -109,6 +109,7 @@
     <h4>Volver al Panel de Gestion</h4>
 </a>
 
+@Scripts.Render("~/bundles/OrdenarTablas")
 
 <script type="text/javascript" src="~/Contents/sweetalert2/sweetalert2.all.js"></script>
 <link rel="stylesheet" href="~/Contents/sweetalert2/sweetalert2.css">

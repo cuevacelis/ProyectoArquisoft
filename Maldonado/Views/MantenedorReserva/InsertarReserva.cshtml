@@ -66,11 +66,109 @@
 
 </div>
 
+
+
+
+
+<table id="myTable">
+
+    <tr>
+
+        <th onclick="sortTable(0, 'str')">Nombre</th>
+
+        <th onclick="sortTable(1, 'str')">Pais</th>
+
+        <th onclick="sortTable(2, 'int')">Numero</th>
+
+    </tr>
+
+    <tr>
+
+        <td>Berglunds snabbkop</td>
+
+        <td>Sweden</td>
+
+        <td>6</td>
+
+    </tr>
+
+    <tr>
+
+        <td>North/South</td>
+
+        <td>UK</td>
+
+        <td>3</td>
+
+    </tr>
+
+    <tr>
+
+        <td>Alfreds Futterkiste</td>
+
+        <td>Germany</td>
+
+        <td>1</td>
+
+    </tr>
+
+    <tr>
+
+        <td>Koniglich Essen</td>
+
+        <td>Germany</td>
+
+        <td>8</td>
+
+    </tr>
+
+    <tr>
+
+        <td>Magazzini Alimentari Riuniti</td>
+
+        <td>Italy</td>
+
+        <td>10</td>
+
+    </tr>
+
+    <tr>
+
+        <td>Paris specialites</td>
+
+        <td>France</td>
+
+        <td>4</td>
+
+    </tr>
+
+    <tr>
+
+        <td>Island Trading</td>
+
+        <td>UK</td>
+
+        <td>6</td>
+
+    </tr>
+
+    <tr>
+
+        <td>Laughing Bacchus Winecellars</td>
+
+        <td>Canada</td>
+
+        <td>5</td>
+
+    </tr>
+
+</table>
+
 <div>
     @Html.ActionLink("Volver a Gestionar Reservas", "Index")
 </div>
 
-@Scripts.Render("~/bundles/MyJson")
+@Scripts.Render("~/bundles/OrdenarTablas")
 <script type="text/javascript">
     $(document).ready(function () {
         $('#TipoHabitacion').change(function () {
@@ -94,3 +192,5 @@
     }
 
 </script>
+
+

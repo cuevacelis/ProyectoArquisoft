@@ -11,15 +11,14 @@
 <p>
     @Html.ActionLink("Agregar Nueva Habitacion", "Create")
 </p>
-<table class="table">
+<table class="table sortable">
     <thead class="thead-dark">
         <tr>
-            <th scope="col">Id Habitacion</th>
-            <th scope="col"> Numero De Habitacion</th>
-            <th scope="col"> Descripcion</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Id Tipo Habitacion </th>
-            <th scope="col">Desc. Tipo Habitacion </th>
+            <th scope="col" onclick="sortTable(0, 'int')">Id Habitacion</th>
+            <th scope="col" onclick="sortTable(1, 'int')"> Numero De Habitacion</th>
+            <th scope="col" onclick="sortTable(2, 'str')"> Descripcion</th>
+            <th scope="col" onclick="sortTable(3, 'int')">Id Tipo Habitacion </th>
+            <th scope="col" onclick="sortTable(4, 'str')">Desc. Tipo Habitacion </th>
             <th></th>
         </tr>
     </thead>
@@ -37,9 +36,6 @@
                     @Html.DisplayFor(modelItem => item.descHabitacion)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.estHabitacion)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.idTipoHabitacion.idTipoHabitacion)
                 </td>
                 <td>
@@ -55,3 +51,5 @@
 <a href="@Url.Action("Index","MenuIntranet")">
     <h4>Volver al Panel de Gestion</h4>
 </a>
+
+@Scripts.Render("~/bundles/OrdenarTablas")
