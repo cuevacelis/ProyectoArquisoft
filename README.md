@@ -1,4 +1,4 @@
-## PROYECTO DE ARQUITECTURA DE SOFTWARE(ARQUISOFT) PARA LA UPN
+# PROYECTO DE ARQUITECTURA DE SOFTWARE(ARQUISOFT) PARA LA UPN
 
 Proyecto de Arquitectura de Software, de la Universidad Privada del Norte de la carrera de Ingeniaria de Sistemas Computacionales.
 
